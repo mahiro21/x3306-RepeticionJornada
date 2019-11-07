@@ -31,44 +31,34 @@ public class Main {
     public static void main(String[] args) {
 
         //Variables
-        char consol;
-        int s = 0;
-        int l = 0;
-        int xxl = 0;
-        int total;
+        int dia;
+        int hora;
+        int minuto = 0;
+        int tHora = 0;
+        int tMinuto = 0;
 
-        double porcentaje1;
-        double porcentaje2;
-        double porcentaje3;
+        System.out.println("Jornada laboral");
+        System.out.println("===============");
+        for (dia = 1; dia <= 7; dia++) {
+            try {
+                System.out.printf("Jornada %dº día%n", dia);
+                System.out.print("hora ..:");
+                hora = SCN.nextInt();
+                SCN.nextLine();
+                System.out.print("minutos ..:");
+                minuto = SCN.nextInt();
+                System.out.print("");
+                tHora += hora;
+                tMinuto += minuto;
 
-        System.out.println("Talla clientes");
-        System.out.println("=================");
-        do {
-            System.out.print("Inserte el su talla..:");
-            consol = SCN.nextLine().charAt(0);
-            switch (consol) {
-                case 's':
-                    s++;
-                    break;
-                case 'l':
-                    l++;
-                    break;
-                case 'x':
-                    xxl++;
-                    break;
-
+            } catch (Exception e) {
+                System.out.println("Error: valor erroneo");
             }
 
-        } while (consol != '0');
-        total = s + l + xxl;
-        porcentaje1 = (double) s / (double) total * 100;
-        porcentaje2 = (double) l / (double) total * 100;
-        porcentaje3 = (double) xxl / (double) total * 100;
-        System.out.printf(Locale.ENGLISH, "Clientes con talla s ....:"
-                + " %.2f%%%n", porcentaje1);
-        System.out.printf(Locale.ENGLISH, "Clientes con talla l  ....:"
-                + " %.2f%%%n", porcentaje2);
-        System.out.printf(Locale.ENGLISH, "Clientes con talla xxl  ..:"
-                + " %.2f%%%n", porcentaje3);
+        }
+        tHora = (tMinuto / 60) + tHora;
+        tMinuto = tMinuto % 60;
+        System.out.printf("Jornada semanal de %d horas y %d minutos%n ",
+                tHora, tMinuto);
     }
 }
