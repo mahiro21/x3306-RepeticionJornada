@@ -64,11 +64,11 @@ public class Main {
         porcentaje1 = (double) s / (double) total * 100;
         porcentaje2 = (double) l / (double) total * 100;
         porcentaje3 = (double) xxl / (double) total * 100;
-        System.out.printf(Locale.ENGLISH, "Cliente con talla s ....:"
+        System.out.printf(Locale.ENGLISH, "Clientes con talla s ....:"
                 + " %.2f%%%n", porcentaje1);
-        System.out.printf(Locale.ENGLISH, "Cliente con talla l  ....:"
+        System.out.printf(Locale.ENGLISH, "Clientes con talla l  ....:"
                 + " %.2f%%%n", porcentaje2);
-        System.out.printf(Locale.ENGLISH, "Cliente con talla xxl  ..:"
+        System.out.printf(Locale.ENGLISH, "Clientes con talla xxl  ..:"
                 + " %.2f%%%n", porcentaje3);
     }
 }
